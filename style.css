@@ -1,0 +1,22 @@
+body {
+  display: flex;
+  justify-content: center;
+  background-color: gray;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  margin-top: 10px;
+}
+
+.valid {
+  background-color: lightgreen;
+}
+
+.error {
+  background-color: lightcoral;
+}
