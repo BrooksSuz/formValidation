@@ -1,8 +1,8 @@
 const inputs = document.querySelectorAll('input');
 const submit = document.querySelector('button');
+const regex = new RegExp('/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/');
 
 inputs.forEach((input) => {
-
   // manage classes
   input.addEventListener('input', () => {
     input.setCustomValidity('');
@@ -235,6 +235,30 @@ inputs[1].addEventListener('input', () => {
     inputs[1].setCustomValidity('That\'s not a country.');
     inputs[1].reportValidity();
     inputs[1].classList.add('error');
+  }
+});
+
+inputs[2].addEventListener('input', () => {
+  if (inputs[2].value.length !== 5) {
+    inputs[2].setCustomValidity('Enter an appropriate zip code.');
+    inputs[2].reportValidity();
+    inputs[2].classList.add('error')
+  }
+});
+
+inputs[3].addEventListener('input', () => {
+  if (inputs[3].value.length <= 8 && !(regex.test(inputs[3]))) {
+    inputs[3].setCustomValidity('At least nine characters.');
+    inputs[3].reportValidity();
+    inputs[3].classList.add('error');
+  }
+});
+
+inputs[4].addEventListener('input', () => {
+  if (inputs[4].value !== inputs[3].value) {
+    inputs[4].setCustomValidity('This is not the same password.');
+    inputs[4].reportValidity();
+    inputs[4].classList.add('error');
   }
 });
 
