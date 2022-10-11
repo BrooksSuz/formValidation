@@ -18,7 +18,7 @@ const validateEmail = () => {
   }
 }
 
-email.addEventListener('input', validateEmail);
+inputs[0].addEventListener('input', validateEmail);
 
 submit.addEventListener('click', (e) => {
   e.preventDefault(); 
